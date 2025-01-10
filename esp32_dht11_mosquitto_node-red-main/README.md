@@ -1,16 +1,13 @@
-# Temperature and Humidity Sensor Project
+# Temperature and Humidity Monitoring
 
-This [project](https://github.com/joaoalexarruda/esp32_dht11_mosquito_node-red) uses an ESP32 and DHT11 sensor to measure temperature and humidity. The data is sent to a Mosquitto broker and visualized on a Node-RED dashboard. It's an improvement over [this simpler project](https://github.com/joaoalexarruda/esp32_dht11_webserver_mqtt), which only works on a local network with no dashboard. Have a look at the old one to see the differences.
-
-It's an assignment for the course "Internet of Things" at the Instituto Politécnico de Portalegre, in Portugal.
+This project uses an ESP32 microcontroller and a DHT11 sensor to measure temperature and humidity. The collected data is sent to a Mosquitto MQTT broker and visualized using a Node-RED dashboard.
 
 You can find out more about the course [here](https://www.ipportalegre.pt/pt/oferta-formativa/pos-graduacao-data-science-and-digital-transformation).
 
-## Screenshot
+## Overview
 
-![Node-RED Dashboard and Setup](https://imgur.com/voznaFv.png)
-
-You can find more screenshots [here](https://imgur.com/a/jabCIWW).
+This project enhances a simpler version that only supported local network communication without a dashboard. Now, with the integration of Node-RED, users can monitor and interact with sensor data via an intuitive interface.
+Course: Internet of Things
 
 ## Hardware Requirements
 
@@ -20,7 +17,8 @@ You can find more screenshots [here](https://imgur.com/a/jabCIWW).
 - Breadboard
 - Jumper wires
 
-![ESP32 DHT11 Breadboard](https://imgur.com/WF8ZJ7I.jpg)
+![image](https://github.com/user-attachments/assets/827ad802-566e-4a2f-8514-887fff1482b4)
+
 
 ## Software Requirements
 
@@ -69,7 +67,6 @@ You can start Node-RED by running `node-red` in the terminal.
 
 ![Node-RED Flow](https://imgur.com/jv2cUAx.png)
 
-It's very easy to create a flow in Node-RED. You can find more information about it [here](https://nodered.org/docs/getting-started/first-flow).
 
 
 ## Node-RED Dashboard
@@ -94,18 +91,19 @@ Also set listener to `1883 0.0.0.0` as seen below.
 
 ## Considerations
 
-- The code has comments explaining what each line does.
-- The DHT11 sensor is a very cheap sensor. It's not very accurate and it's not very reliable. It's a good sensor to start with, but it's not recommended for real-world applications.
-- It's very easy to install everything if you are running Linux. If you are running Windows, you may have some problems. I recommend using Fedora.
-- VSCode + PlatformIO is preferred over the Arduino IDE. It's much easier to use and it has a lot of features, such as code completion, code linting, git integration, etc.
-- The ESP32 is a very powerful microcontroller. It's very easy to use and it has a lot of features. It's a good choice for this project.
-- Note that the arduino uno showed in the picture is not used in this project. The only microcontroller on is the ESP32.
+The DHT11 sensor is a basic, low-cost option. Consider using a higher-quality sensor for more accurate data.
+
+For Linux users, the setup process is straightforward. Windows users may encounter additional challenges.
+
+PlatformIO is recommended for its advanced features, including code completion and linting.
 
 ## Future Improvements
+Integrate additional ESP32 devices to share data on the same MQTT broker.
 
-- Connect another ESP32 with a DHT11 sensor to the same MQTT broker and display the data on the same dashboard.
-- Subscribe multiple devices to the same MQTT broker so they can do actions based on the data received.
-- Get a Raspberry Pi and install the Mosquitto MQTT Broker and Node-RED on it. This way you can have a dedicated device for this project.
-- Use a good sensor instead of a cheap DHT11 sensor.
-- Implement a better way to handle errors.
-- Utilize these sensors in a real-world scenario, like a smart home. For example, turn on the air conditioner when the temperature is too high, or turn on the humidifier when the humidity is too low.
+Implement actions based on received data (e.g., control appliances like air conditioners or humidifiers).
+
+Host the Mosquitto broker and Node-RED on a Raspberry Pi for a dedicated setup.
+
+Use higher-quality sensors for improved reliability.
+
+Extend the system to real-world applications, such as smart home automation.
