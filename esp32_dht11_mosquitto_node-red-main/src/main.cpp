@@ -1,7 +1,4 @@
 /*
- * File: main.cpp
- * Author: João Alex Arruda da Silva
- * Date: 2024-Jan
  * Description: This file contains the code for the ESP32 microcontroller
  *              that reads the temperature and humidity from the DHT11 sensor
  *              then calculates the moving average of the last 5 readings
