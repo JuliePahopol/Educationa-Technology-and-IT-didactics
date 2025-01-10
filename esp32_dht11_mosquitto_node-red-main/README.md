@@ -87,7 +87,8 @@ Pay attention to the serial output of the ESP32. It's very useful for debugging.
 In the mosquitto.conf file, be sure to set the `allow_anonymous` option to `true`.
 Also set listener to `1883 0.0.0.0` as seen below.
 
-![Mosquitto Config](https://imgur.com/OqW4wx4.png)
+![iot2](https://github.com/user-attachments/assets/37060d62-2980-496f-87a0-d595130d957a)
+
 
 ## Considerations
 
